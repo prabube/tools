@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<title> DOM Creation By Prabu </title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="style.css">
+<script type="text/javascript" src="commonjs_v1.js"></script>
+<body>
+<!-- <h1 style="font-size:10vw;">DOM Creation</h1>
+<textarea id="ptxt" style="font-size:2vw;"></textarea>
+<button id="btnOK" onclick="ptxtChanged()">Submit</button>
+<p id="domtxt"></p> -->
+
+<div id="main-container">
+<header id="header"><div id="logoparent"></div>
+	<div id="titletxt"> DOM Creation</div></header>
+<div id="app-container">
+	<div id="homedetails">
+		<div id="detailsparent">
+		<h2 id="hometxt1">HTML DOM CREATING APP </h2>
+		<p id="hometxtdetails"></p>
+		<button id="btnstartnow" class="btns" onclick="startnow()">Start Now</button></div>
+		</div>
+	<div id="domplan">
+		<h2 id="domtxt1">PLAN TEXT </h2>
+		<h2 id="domtxt2">HTML DOM</h2>
+		<textarea id="plantextarea"></textarea>		
+		<textarea id="htmltextarea"></textarea>		
+		<button id="createhtml" class="btns" onclick="ptxtChanged()">Create HTML</button>
+		</div>
+</div>
+<footer id="footer">Developed by Dynamic Creative Development Team</footer>
+</div>
+
+<script>
+window.onload=function(){
+console.log("APP loaded");
+
+}
+
+function startnow(){ $ge("#homedetails")[0].style.display="none"; $ge("#domplan")[0].style.display="block"; }
+
+
+var oTxt=[]; var cparent; var cP=0; var b;
+function ptxtChanged(){ oTxt=[]; cP=0; var overallHTML=''; b=$ce("body","creative-body");   oTxt[0]=b; 
+    var txt=document.getElementById("plantextarea").value;
+    txt=txt.split('\n'); //console.log(txt);
+	
+
+    for(var i=0;i<txt.length;i++){
+	    var p = getParent(txt[i]); 
+        getElement(p[0],p[1]);
+    }
+    setTimeout(function(){
+    document.getElementById("htmltextarea").innerText=b.outerHTML;},1000);
+}
+function getElement(t,p){
+        var c='',ele='div',id=t;        
+        var ee = t.indexOf("("); //console.log(ee);
+        var cc = t.indexOf("."); //console.log(cc);
+        if(ee>-1 && cc>-1){
+        if(ee<cc){ id=t.substr(0,ee) }else{ id=t.substr(0,cc) }
+        }else if(ee>-1){id=t.substr(0,ee)}else if(cc>-1){id=t.substr(0,cc)}
+        
+		if(ee>-1){
+            ele=t.slice((t.indexOf("(")+1),t.indexOf(")")); //console.log(ele);
+        }
+        if(cc>-1){
+            c=t.substr((t.indexOf(".")+1)); c=c.trim();  c=c.replaceAll(".", " "); //console.log(c);
+        }
+		
+        var e=$ce(ele.trim(),id.trim(),c.trim());
+		//console.log("Parent : ",cP , "   Child : ",p , " id: "+id.trim() );		
+		if(p==0){
+		oTxt[p].appendChild(e);
+		}else if(cP>=p){ 
+		oTxt[(p-1)].appendChild(e); 
+		}else if(cP<p){
+		oTxt[cP].appendChild(e); 
+		}
+		oTxt[p]=e; cP=p;
+}
+function getParent(ltxt){ var re=[];
+	if(ltxt.search('>') != -1){ 
+		var cou=SearchStringCount(ltxt,'>');
+		re=[ltxt.replaceAll(">", "").trim(),cou];//console.log(cou);
+	}else if(ltxt.search('\t') != -1){
+		var cou=SearchStringCount(ltxt,'\t');
+		re=[ltxt.replaceAll("\t", "").trim(),cou];//console.log(cou);
+	}else{
+	  re=[ltxt.trim(),0];
+	}
+	return re;
+}
+function SearchStringCount(s,c){ var count=0;
+	while(s.search(c) != -1){ count++; s = s.replace(c, "");}
+	return count;
+}
+</script>
+</body>
+</html>

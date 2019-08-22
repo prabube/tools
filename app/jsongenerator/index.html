@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+     <link rel="stylesheet" type="text/css" href="style.css">
+    <title>JSON Link Generator</title>
+</head>
+<body>
+    <div id="container">
+        <h1> JSON LINK GENERATOR </h1>
+        <input type="text" id="sheetid" placeholder="Paste your google sheet id.."/>
+        <button id="btnSubmit" onclick="getJSON()">Submit</button>
+        <div id="result">
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+var sheetid="1C9mspfJp9p65EXH1LKuaDEMyLQyi_NsGmGh_3J5NrUw";
+var urlbefore="https://spreadsheets.google.com/feeds/worksheets/";
+var urlafter="/public/basic";
+
+function getJSON(){
+    sheetid=document.getElementById("sheetid").value;
+    if(sheetid.length > 10 ){
+    var url=urlbefore+sheetid+urlafter; //console.log(url);
+
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {	
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {	
+            var data = xmlhttp.responseText;
+
+            var l=data.split("href='"); var links=[]; var names=[];
+            var n=data.split("<content type='text'"); //console.log(n);
+            
+                for(var i=0; i<l.length;i++){
+                if(l[i].substr(0,43)=="https://spreadsheets.google.com/feeds/list/"){
+                    links.push(l[i].split("'")[0]);
+                }
+                }
+                for(var j=0;j<links.length;j++){
+                    links[j]=links[j].replace("basic", "values?alt=json");
+                }
+
+                //sheet Name
+                for(var s=0;s<n.length;s++){
+                    if(n[s][0]==">"){
+                        names.push(n[s].split('<')[0]);
+                    }
+                }
+                displayResult(links,names);
+            } 
+        }
+        //url = "https://spreadsheets.google.com/feeds/worksheets/1C9mspfJp9p65EXH1LKuaDEMyLQyi_NsGmGh_3J5NrUw/public/basic";
+        xmlhttp.open("GET", url, true);
+        xmlhttp.send();	
+    }
+}
+
+
+function displayResult(links,names) { var r="<h2>Generated json links are : </h2>";
+    for(var k=0; k<links.length;k++){
+        r = r +"<b>"+ names[k] +"</b> <br>"+links[k]+"<br><br>"  
+          }
+
+    //document.getElementById("result").innerHTML="<h2>Generated json links are : </h2>"+links.join("<br><br>");
+    document.getElementById("result").innerHTML=r;
+}
+
+</script>
+</html>

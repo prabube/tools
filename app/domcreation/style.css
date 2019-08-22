@@ -1,0 +1,44 @@
+body{margin: 0;padding: 0;background-color: #4587C0;color: #fff;}
+h1{}
+
+#ptxt {
+ width: 80%;
+ height: 200px;
+}
+
+#main-container{width: 100%;height: 100%;margin: auto;top: 0;bottom: 0;position: absolute;}
+header{width: 100%;height: 10%;position: fixed;top: 0px;background-color: #fff;}
+#app-container{position: absolute;top: 10%;width: 100%;height: 80%;}
+footer{width: 100%;height: 10%;position: fixed;bottom: 0px;background-color: #183E61;text-align: center;line-height: 6;font-size: 14px;color: #56c2e9;}
+#logoparent{height: 100%;width: 222px;float: left;margin-left: 30px;/*! opacity: 0; */}
+#titletxt{height: 100%;margin-right: 30px;float: right;color: #183E61;font-size: 44px;line-height: 1.8;text-align: right;font-weight: bold;}
+#homedetails{width: 96%;height: 94%;margin: 2%;padding: 0;position: absolute;}
+#domplan{width: 96%;height: 94%;margin: 2%;padding: 0;position: absolute;display: none;}
+#logoimg{margin: auto 0;top: 0;bottom: 0;position: absolute;}
+#detailsparent{position: absolute;width: 60%;height: 60%;margin: auto;top: 0;bottom: 0;left: 0;right: 0;text-align: center;background-color: rgba(255,255,255,0.1);box-shadow: 0px 0px 10px #053F54;}
+#btnstartnow{width: 200px;height: 60px;margin-top: 160px;background-color: #56C2E9;border-color: #2F83D1;border-radius: 30px;color: #fff;font-size: 32px;cursor: pointer;}
+#createhtml{position: absolute;text-align: center;width: 300px;height: 50px;bottom: 20px;left: 0;right: 0;margin: 0 auto;background-color: #56C2E9;border-color: #2F83D1;border-radius: 30px;color: #123d6b;font-size: 32px;cursor: pointer;}
+#plantextarea{width: 46%;float: left;height: 70%;background-color: rgba(255,255,255,0.7);border: 1px solid #183e61;color: #183e61;padding: 4px;box-shadow: 0px 0px 10px #053F54;}
+#htmltextarea{width: 46%;float: right;height: 70%;background-color: rgba(255,255,255,0.7);border: 1px solid #183e61;color: #183e61;padding: 4px;box-shadow: 0px 0px 10px #053F54;}
+#domtxt1{width: 46%;float: left;text-align: center;}
+#domtxt2{width: 46%;float: right;text-align: center;}
+
+
+/* width */
+::-webkit-scrollbar {
+    width: 4px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    
+    border-radius: 4px;
+	background: #0A8FB1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #F7AF00; 
+    border-radius: 4px;
+   
+}

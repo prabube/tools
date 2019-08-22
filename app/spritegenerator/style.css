@@ -1,0 +1,19 @@
+body{margin: 0;background: url(bg.png) repeat;font-family: arial;}
+#container{position: absolute;width: 100%;margin: auto;height: 100%;}
+#spritImg{background-color: rgba(0, 68, 102,0.2);opacity: 1;position: absolute;} 
+#spritImg img{float: left;position: absolute;}
+/*#container a{text-decoration: none; color: black;text-align: center;position: fixed;margin: 0 auto;left: 0;right: 0;bottom: 83px;cursor: pointer;font-size: 20px;z-index: 10;text-shadow: 2px 4px 3px white;font-weight: bold;width: 300px;height: 40px;opacity: 0;background-color: rgba(0,0,0,0.2);border-radius: 30px;line-height: 2;}*/
+#canvasimg{z-index: 6;opacity: 0;transition: opacity 0.5s;}
+#msg{position: absolute;margin: 10%;width: 80%;height: 80%;border-radius: 50%;background-color: rgba(0, 102, 153,0.2);cursor: default;}
+#msg h1{text-align: center;margin: auto;top: 0;bottom: 0;position: absolute;left: 0;right: 0;height: 50px;text-shadow: 2px 2px #e6f7ff;color: #006699;}
+#menu{width: 850px;height: 30px;position: fixed;right: 10px;top: 10px;background-color: rgba(0, 102, 153,0.8);padding: 2px 5px 2px 2px;border-radius: 0px 15px 15px 0px;z-index: 10;}
+.menuitems{width: 150px;position: relative;float: right;height: 24px;text-align: center;line-height: 2;border-right: 2px dotted #00aaff;box-sizing: border-box;color: #66ccff;cursor: default;margin: 3px 0 3px -11px;font-size: 12px;background-color: #004466;border-radius: 0px 12px 12px 0px;text-decoration: none;}
+.menuitems:hover{font-weight: bold;}
+#menu4{/*! border-right: none; */}
+#SourceDiv{width: 80%;height: 60%;position: absolute;border: 0px solid;z-index: 10;display: none;margin: 10%;padding: 10px;background: rgba(0,0,0,0.8);color: skyblue;border-radius: 20px;}
+#closeBtn{width: 40px;height: 40px;position: absolute;top: -10px;right: -10px;border-radius: 20px;font-weight: bold;cursor: pointer;}
+#imgLayout{position: absolute; top: 0px; left: 0px;display: none;}
+.pimg{}
+#canvasLayout{position: absolute;top: 0;left: 0;display: none;}
+#txtArea{background-color: rgba(0,0,0,0);width: 90%;height: 90%;margin: auto;top: 0;position: absolute;bottom: 0;left: 0;right: 0;color: skyblue;}
+
