@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+  <script type="text/javascript" src="canvas-fish.js"></script>
+    <style>
+      body {
+        margin: 0px;
+        padding: 0px;
+		overflow:hidden;
+		background-color:#00415b;
+		width:100%;
+		height:100%;
+		position:absolute;
+      }
+	  canvas{
+	   margin:0 auto;
+		position: absolute;
+		left: 0;
+		right:0;
+	  }
+	  #canvas-bg{	  
+		width:110%;
+		height:110%;
+		position:absolute;
+		/* background: #00415b url(bg.svg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover; */
+	transform: translate(-50%, -50%);
+	-webkit-transform: translate(-50%, -50%);
+	left: 50%;
+	top: 50%;
+	transition:0.2s all;
+	  }
+	  #bgimg{
+	  width: auto;
+	height: 100%;	  
+	  }
+    </style>
+  </head>
+  <body>
+  <div id="canvas-bg"><img id="bgimg" src="bg.svg"></div>
+  <div id="canvas-fish"></div>
+   <!--  <canvas id="myCanvas" width="600" height="344"></canvas> -->
+  </body>
+</html>  
