@@ -4,7 +4,7 @@ header{width: 100%;font-size: 26px;text-align: center;margin: 16px;font-family: 
 
 ul{width: 500px;margin: auto;}
 
-li{float: left;margin: 16px;background-color: rgba(0,0,0,0.1);padding: 10px;border-radius: 4px;cursor: pointer;}
+li{margin: 16px;background-color: rgba(0,0,0,0.1);padding: 10px;border-radius: 4px;cursor: pointer;display: inline-block;}
 
 a{text-decoration: none;color: #000;}
 
