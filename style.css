@@ -1,11 +1,6 @@
 body{text-align: center;}
-
 header{width: 100%;font-size: 26px;text-align: center;margin: 16px;font-family: arial;color: #fff;text-shadow: 2px 2px 1px #000;}
-
 ul{width: 500px;margin: auto;}
-
 li{margin: 16px;background-color: rgba(0,0,0,0.1);padding: 10px;border-radius: 4px;cursor: pointer;display: inline-block;}
-
 a{text-decoration: none;color: #000;}
-
 li:hover{background-color: rgba(0,0,0,0.2);}
